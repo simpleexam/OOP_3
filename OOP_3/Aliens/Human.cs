@@ -7,6 +7,9 @@ using System.Xml.Linq;
 
 namespace OOP_3.Aliens
 {
+    /// <summary>
+    /// класс Human уснаследованный от Alien
+    /// </summary>
     internal class Human : Alien
     {
         //конструктор, создающий объект человека
@@ -18,7 +21,10 @@ namespace OOP_3.Aliens
             LifeExpectancy = 100;
             Name = name;
         }
-
+        /// <summary>
+        /// метод - имитация взаимодействия с другими расами 
+        /// </summary>
+        /// <param name="type">тип пришельца</param>
         public override void Interaction(AlienType type)
         {
             string resultOfInteraction = "";
@@ -49,6 +55,7 @@ namespace OOP_3.Aliens
 
         }
 
+        //переопределенный от класса Object метод ToString 
         public override string ToString()
         {
             return new string($"Объект {Name} относится к типу {AlienType}\n" +

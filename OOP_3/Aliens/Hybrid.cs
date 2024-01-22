@@ -8,9 +8,9 @@ namespace OOP_3.Aliens
 {
     internal class Hybrid : Alien
     {
-        //конструктор, создающий объект рептоида
+        //конструктор, создающий объект гибрид
         //принимает только имя
-        //продолж жизни и тип одинаковы для всех объектов
+        //продолжительность жизни может отличаться
         public Hybrid(string name, AlienType motherType, AlienType fatherType)
         {
             AlienType = AlienType.Hybrid;

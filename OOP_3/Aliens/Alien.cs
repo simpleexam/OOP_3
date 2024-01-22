@@ -13,23 +13,28 @@ namespace OOP_3.Aliens
     /// </summary>
     internal abstract class Alien
     {
-        public AlienType AlienType { get; set; } //автосвойство типа пришельца
-        //свойство Name  проверяющее длину имени перед записью
-        string name;
-        public string Name
+        public AlienType AlienType { get; set; }    //автосвойство типа пришельца
+        string name;    //закрытое поле имени                            
+        public string Name  //свойство name  проверяющее длину имени перед записью
         {
             get => name;
             set
             {
-                if (value.Length >= 3 || value.Length <= 50)
+                //если имя не попадает по длине в диапазон от 3 до 50 символов - то 
+                //выводится предупреждение о некоррекности
+                //и в поле name записывается строка none
+                if (value.Length >= 3 || value.Length <= 50) //bvz 
                     name = value;
-                else Console.WriteLine("длина имени от 3 до 50 символов");
+                else
+                {
+                    Console.WriteLine("длина имени от 3 до 50 символов");
+                    name = "none";
+                }
             }
         }
-        //свойство продолжительности жизни, проверяющее что значение не меньше нула.
-        //и если оно меньше = обнуляет
-        int lifeExp;
-        public int LifeExpectancy
+        int lifeExp; //закрытое поле продолжительности жизни
+        public int LifeExpectancy //свойство продолжительности жизни, проверяющее что значение не меньше нуля
+                                  //и если оно меньше - обнуляет
         {
             get => lifeExp;
             set
