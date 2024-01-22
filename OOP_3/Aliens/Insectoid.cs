@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace OOP_3
+namespace OOP_3.Aliens
 {
-    internal class Hybrid : Alien
+    internal class Insectoid : Alien
     {
         //конструктор, создающий объект рептоида
         //принимает только имя
         //продолж жизни и тип одинаковы для всех объектов
-        public Hybrid(string name, AlienType motherType, AlienType fatherType)
+        public Insectoid(string name)
         {
-            AlienType = AlienType.Hybrid;
+            AlienType = AlienType.Insectoid;
             LifeExpectancy = 50;
-            if (motherType == AlienType.Zeta && fatherType == AlienType.Human) { LifeExpectancy = 500; }
-            else if (motherType == AlienType.Reptoid && fatherType == AlienType.Human) { LifeExpectancy = 150; }
-            else { LifeExpectancy =200; }
             Name = name;
         }
 
@@ -28,26 +26,26 @@ namespace OOP_3
             switch (type)
             {
                 case AlienType.Reptoid:
-                    resultOfInteraction = "дружит";
+                    resultOfInteraction = "боится";
                     break;
                 case AlienType.Insectoid:
                     resultOfInteraction = "дружит";
                     break;
                 case AlienType.Human:
-                    resultOfInteraction = "дружит";
+                    resultOfInteraction = "Изучает";
                     break;
                 case AlienType.Zeta:
-                    resultOfInteraction = "дружит";
+                    resultOfInteraction = "??";
                     break;
                 case AlienType.Hybrid:
-                    resultOfInteraction = "Дружит";
+                    resultOfInteraction = "??";
                     break;
                 default:
                     resultOfInteraction = "Изучает";
                     break;
             }
 
-            Console.WriteLine(this.AlienType +" "+resultOfInteraction+" "+ type);
+            Console.WriteLine(AlienType + " " + resultOfInteraction + " " + type);
 
         }
 

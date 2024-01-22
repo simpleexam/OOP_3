@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace OOP_3
+namespace OOP_3.Aliens
 {
-    internal class Human : Alien
+    internal class Zeta : Alien
     {
         //конструктор, создающий объект человека
         //принимает только имя
         //продолж жизни и тип одинаковы для всех объектов
-        public Human(string name)
+        public Zeta(string name)
         {
-            AlienType = AlienType.Human;
-            LifeExpectancy = 100;
+            AlienType = AlienType.Zeta;
+            LifeExpectancy = 1000;
             Name = name;
         }
 
@@ -26,26 +26,26 @@ namespace OOP_3
             switch (type)
             {
                 case AlienType.Reptoid:
-                    resultOfInteraction = "подчиняется";
+                    resultOfInteraction = "??";
                     break;
                 case AlienType.Insectoid:
-                    resultOfInteraction = "боится";
+                    resultOfInteraction = "??";
                     break;
                 case AlienType.Human:
-                    resultOfInteraction = "дружит";
+                    resultOfInteraction = "учит";
                     break;
                 case AlienType.Zeta:
-                    resultOfInteraction = "учится";
+                    resultOfInteraction = "дружит";
                     break;
                 case AlienType.Hybrid:
-                    resultOfInteraction = "дружит";
+                    resultOfInteraction = "помогает";
                     break;
                 default:
                     resultOfInteraction = "Изучает";
                     break;
             }
 
-            Console.WriteLine(this.AlienType +" "+resultOfInteraction+" "+ type);
+            Console.WriteLine(AlienType + " " + resultOfInteraction + " " + type);
 
         }
 

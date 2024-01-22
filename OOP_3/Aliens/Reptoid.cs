@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_3
+namespace OOP_3.Aliens
 {
     internal class Reptoid : Alien
     {
         //конструктор, создающий объект рептоида
         //принимает только имя
         //продолж жизни и тип одинаковы для всех объектов
-        public Reptoid(string name) 
+        public Reptoid(string name)
         {
             AlienType = AlienType.Reptoid;
             LifeExpectancy = 300;
-            Name = name;    
+            Name = name;
         }
 
         public override void Interaction(AlienType type)
@@ -23,7 +23,7 @@ namespace OOP_3
             string resultOfInteraction = "";
 
             switch (type)
-            { 
+            {
                 case AlienType.Reptoid:
                     resultOfInteraction = "дружит";
                     break;
@@ -44,11 +44,11 @@ namespace OOP_3
                     break;
             }
 
-            Console.WriteLine(this.AlienType +" "+resultOfInteraction+" "+ type);
+            Console.WriteLine(AlienType + " " + resultOfInteraction + " " + type);
 
         }
 
-        public override string ToString() 
+        public override string ToString()
         {
             return new string($"Объект {Name} относится к типу {AlienType}\n" +
                 $"продолжительность жизни {LifeExpectancy}");

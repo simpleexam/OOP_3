@@ -5,15 +5,18 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_3
+namespace OOP_3.Aliens
 {
-    
+    /// <summary>
+    /// абстрактный класс Alien - может как частично содержать реализацию, так и только шаблоны 
+    /// в унаследованных классах уже реализуется уникальная логика того, что было заявлено в абстрактом классе
+    /// </summary>
     internal abstract class Alien
     {
         public AlienType AlienType { get; set; } //автосвойство типа пришельца
         //свойство Name  проверяющее длину имени перед записью
         string name;
-        public string Name 
+        public string Name
         {
             get => name;
             set
@@ -29,7 +32,7 @@ namespace OOP_3
         public int LifeExpectancy
         {
             get => lifeExp;
-            set 
+            set
             {
                 if (value < 0)
                 {
@@ -43,6 +46,6 @@ namespace OOP_3
         //абстрактный метод взаимодействия с другими типами пришельцев
         //реализуется строго в классах-наследниках
         public abstract void Interaction(AlienType type);
-        
+
     }
 }

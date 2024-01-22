@@ -1,5 +1,8 @@
-﻿namespace OOP_3
+﻿using OOP_3.Aliens;
+
+namespace OOP_3
 {
+    //перечисление типов пришельцев
     enum AlienType { Reptoid, Insectoid, Human, Zeta, Hybrid };
     internal class Program
     {
